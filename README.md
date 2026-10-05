@@ -45,7 +45,9 @@ Both `spark_clean.py` and `ray_clean.py` implement identical business logic:
 4. **Feature Engineering (Custom Python UDF)**
    - Calculates average trip speed in miles per hour:
 
-     $$\text{avg\_speed\_mph} = \frac{\text{trip\_distance}}{(\text{dropoff\_datetime} - \text{pickup\_datetime})_{\text{hours}}}$$
+```math
+     \text{avg\_speed\_mph} = \frac{\text{trip\_distance}}{(\text{dropoff\_datetime} - \text{pickup\_datetime})_{\text{hours}}}
+```
 
    - Flags anomalies (≤ 0 hours or > 24 hours) to `0.0`.
 
